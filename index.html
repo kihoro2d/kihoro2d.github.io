@@ -1,90 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>kihoro2d</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
-
-  <style>
-    :root {
-      --color-primary: #FAFAFA;
-      --color-secondary: #18181B;
-      --transition-base: all 0.5s ease-out
-    }
-
-    @keyframes blink {
-      from, to {
-        color: transparent }
-      50% {
-        color: var(--color-primary) }
-    }
-
-    body {
-      display: flex;
-      height: 100vh;
-      color: var(--color-primary);
-      font-family: 'Cutive Mono', sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      margin: 0;
-      background: var(--color-secondary);
-      transition: var(--transition-base) }
-    body.reverse {
-      --color-primary: #18181B;
-      --color-secondary: #FAFAFA }
-
-    figure {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      margin: auto }
-    figure svg {
-      max-width: 16rem;
-      max-height: 16rem;
-      transition: var(--transition-base);
-      cursor: pointer }
-    figure svg path {
-      fill: var(--color-primary);
-      transition: inherit }
-    figure svg circle {
-      fill: var(--color-secondary);
-      stroke: var(--color-primary);
-      transition: inherit }
-
-    figure figcaption {
-      font-size: 4.6rem;
-      line-height: 1.2;
-      text-align: center;
-      margin: 1rem 0 0 }
-    figure figcaption::selection {
-      color: var(--color-secondary);
-      background-color: var(--color-primary) }
-    figure figcaption::after {
-      content: '|';
-      display: block;
-      animation: 1s blink step-end infinite }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
 
-  <figure>
-    <svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <div class="demo">
+    <svg class="demo__logo logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
       <circle cx="256" cy="256" r="240" stroke-width="32" />
       <path d="m240.43 403.86c-3.4503-1.8729-7.0363-5.8317-8.9576-9.8882-2.13-4.4978-11.406-28.632-14.95-38.897-5.439-15.754-12.61-34.249-13.801-35.594-0.55825-0.63068-14.554 12.529-35.19 33.087-15.698 15.639-23.542 23.019-25.328 23.831-3.0477 1.3847-7.7526 1.5448-10.581 0.36004-2.8389-1.1892-6.5069-5.4915-7.3488-8.6194-1.3563-5.0398 0.27959-9.705 7.0381-20.069 3.7448-5.743 17.991-23.791 27.131-34.369 3.2352-3.7446 5.4856-6.8081 5.0008-6.8081-0.4848 0-4.6372 0.44086-9.2275 0.97972-4.7606 0.55876-13.584 0.98835-20.541 0.99991-23.304 0.0389-35.84-3.413-44.715-12.313-8.7363-8.76-10.952-19.099-7.2194-33.682 4.2955-16.781 20.006-39.506 37.615-54.412 20.736-17.552 38.633-26.359 49.468-24.343 5.3008 0.98629 9.8864 3.3722 14.249 7.4137 4.1732 3.8659 5.2987 6.3925 4.8639 10.919-0.61127 6.365-6.2379 11.315-25.858 22.749-15.638 9.1137-22.3 14.549-34.441 28.098-10.611 11.842-15.237 19.564-15.411 25.728-0.0754 2.6606 0.78644 3.6741 4.7916 5.6348 6.5575 3.21 22.902 3.3138 40.913 0.25961 4.2258-0.71658 13.463-2.7827 20.526-4.5914l12.843-3.2885 6.7875-7.1862c19.961-21.132 53.48-51.397 90.682-81.875 21.038-17.237 33.623-26.719 49.405-37.229 16.193-10.783 22.753-13.866 32.837-15.434 8.7476-1.3607 17.554 1.6504 24.178 8.2669 5.0434 5.0377 6.0414 9.5244 3.3707 15.156-2.5641 5.4065-7.2413 9.2138-20.986 17.084-11.023 6.3112-19.424 11.833-34.709 22.809-27.872 20.017-55.631 41.137-71.675 54.534-11.532 9.6281-29.314 25.159-29.077 25.396 0.1056 0.10576 5.5109-0.085 12.012-0.42386 10.598-0.5524 55.988-1.85 73.732-2.1079 5.9425-0.0864 7.22 0.0817 9.3807 1.2347 3.0677 1.6367 4.3563 3.0179 5.6047 6.0072 2.6342 6.3081-0.0335 13.645-6.1523 16.919-2.5618 1.3712-2.7583 1.3791-29.158 1.1785-24.078-0.18301-66.175 0.66795-74.157 1.4989l-3.176 0.33075 2.6977 6.695c3.6352 9.0219 18.417 53.645 20.873 63.013 1.5698 5.9866 1.9891 8.9044 2.0686 14.392 0.0926 6.3938-0.026 7.1394-1.6686 10.486-3.1584 6.4356-8.6232 8.8506-13.74 6.0728zm-35.626-215.88c-3.9727-1.001-7.0375-2.9061-10.026-6.2311-3.5686-3.9714-4.4325-6.51-4.0476-11.893 0.54186-7.5775 6.3938-15.164 14.085-18.258 5.1971-2.091 13.603-2.073 17.889 0.0384 6.7038 3.3019 9.7469 8.2281 9.7682 15.813 0.0126 4.2016-0.23776 5.2808-2.0188 8.7231-3.5746 6.9081-11.081 11.584-19.502 12.148-2.0865 0.13974-4.8534-0.0132-6.1486-0.33938z" />
-     </svg>
-     <figcaption>kihoro2d</figcaption>
-  </figure>
+    </svg>
+    <div class="demo__body">
+      <h1 class="demo__user">kihoro2d</h1>
+      <h3 class="demo__text">Web Developer</h3>
+    </div>
+  </div>
 
-  <script>
-    const svg = document.querySelector('figure svg')
-    svg.addEventListener('click', event => document.body.classList.toggle('reverse'))
-  </script>
+  <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,99 @@
+:root {
+  --color-primary: #18181B;
+  --color-secondary: #FAFAFA;
+
+  --regular-size: 1.6rem;
+  --regular-font: 'Cutive Mono', sans-serif;
+  --regular-font-weight: 400;
+  --regular-line-height: 1.5;
+
+  --transition-base: all 0.5s ease-out
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+::selection {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html.dark-mode {
+  --color-primary: #FAFAFA;
+  --color-secondary: #18181B;
+}
+
+body {
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-primary);
+  font-family: var(--regular-font);
+  font-size: var(--regular-size);
+  font-weight: var(--regular-font-weight);
+  line-height: var(--regular-line-height);
+  background: var(--color-secondary);
+  transition: var(--transition-base);
+}
+
+
+.logo {
+  display: inline-block;
+  transform: rotateZ(0);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.logo path {
+  fill: var(--color-primary);
+  transition: inherit;
+}
+
+.logo circle {
+  fill: var(--color-secondary);
+  stroke: var(--color-primary);
+  transition: inherit;
+}
+
+.demo {
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  margin: auto;
+}
+
+.demo__logo {
+  display: block;
+  max-width: 18rem;
+  margin: 0 auto;
+}
+
+.demo__body {
+  padding-top: 1rem;
+}
+
+.demo__user,
+.demo__text {
+  margin-bottom: 0;
+}
+
+.demo__text {
+  user-select: none;
+}
+
+.demo__text::after {
+  content: '|';
+  display: block;
+  animation: 1s blink step-end infinite;
+}
